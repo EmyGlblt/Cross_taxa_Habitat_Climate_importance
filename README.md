@@ -57,7 +57,7 @@ X. Extra functions
 
 <br>
 
-1. Model
+1. Model ---------------------------------------------------------------------------------------
    - Hmsc_models
 > [!NOTE]
 > _Hmsc models run for both occurrence and abundance data for all taxa in a separate R file_
@@ -74,7 +74,7 @@ X. Extra functions
 
 <br>
 
-2. Postprocessing              
+2. Postprocessing ---------------------------------------------------------------------------------------
 > [!NOTE]
 > _Present the new variance partition summaries code and how to extract them from Hmsc models, plot results and perform joint variance partition interpretation._
    
@@ -92,7 +92,7 @@ X. Extra functions
 
 <br>
 
-X. Extra functions              
+X. Extra functions ---------------------------------------------------------------------------------------
 > [!NOTE]
 > _Contains scripts for data summarizing (TableCLCdata.R, TableCLCprop.R), data processing (cHmsc.R from the HMSC package), data analysing (Corr_function.R) and data plotting (Finbr_niceplot.R and function_ggplot_strip_color.R from https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip)_
 
