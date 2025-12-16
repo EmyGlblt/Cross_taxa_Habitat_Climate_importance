@@ -92,13 +92,13 @@ X. Extra functions
    
    - VP_plotting
 > [!IMPORTANT]
-> _ Provide all script to recreate the figures in the main and supplementary part of the manuscript Euler plots (figure 2), termplots (figure 2, 3 and 4), joint effects of environemntal frivers (figure 5) and variance partition summaries from the supplementary: density plots (VP_val_density.R) and driver dominance (Driver_dominance.R and Driver_dominance_cond.R)
+> _ Provide all script to recreate the figures in the main and supplementary part of the manuscript Euler plots (figure 2), termplots (figure 2, 3 and 4), joint effects of environemntal frivers (figure 5) and variance partition summaries from the supplementary: density plots (VP_val_density.R) and driver dominance (Driver_dominance.R and Driver_dominance_cond.R)._
 
 <br>
 
 X. Extra functions ---------------------------------------------------------------------------------------
 > [!NOTE]
-> _Contains scripts for data summarizing (TableCLCdata.R, TableCLCprop.R), data processing (cHmsc.R from the HMSC package), data analysing (Corr_function.R) and data plotting (Finbr_niceplot.R and function_ggplot_strip_color.R from https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip)_
+> _Contains scripts for data summarizing (TableCLCdata.R, TableCLCprop.R), data processing (cHmsc.R from the HMSC package), data analysing (Corr_function.R) and data plotting (Finbr_niceplot.R and function_ggplot_strip_color.R from https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip)._
 
 <br>
 Analyses were performed in R software (>4.4). Specifically, we used Hmsc software (3.3).
