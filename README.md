@@ -1,6 +1,6 @@
 # Cross_taxa_Habitat_Climate_importance
 
-Code to implement the Cross taxa analyses of terrestrial animal communities changes in Finland (Hierarchical Modelling of Species Communities (HMSC) and adapted variance partition summaries). The code is linked to a paper in review.
+Code to implement the cross taxa analyses of terrestrial animal communities changes in Finland (Hierarchical Modelling of Species Communities (HMSC) and adapted variance partition summaries). The code is linked to a paper in review.
 
 We used Bayesian joint species distribution models and variance partition to investigate the occurrence and abundance patterns of 503 animal species, including birds, large mammals, small mammals (rodents and shrews), butterflies, and moths across a ~1,100 km latitudinal gradient in Finland. For each species group, spatial context (boreal region, within and between region), and functional group (species grouped by life history traits) we evaluate the relative and shared importance of 3 main environmental drivers: climate, habitat composition, landscape configuration.
 
