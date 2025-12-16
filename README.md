@@ -15,13 +15,13 @@ Data have been collected in systematic and organized monitoring programs lead by
 
 ### Species data
 
-*Bird* monitoring data is curated by the Finnish Museum of Natural History, and available through the Finnish Biodiversity Information Facility, FinBIF (https://laji.fi).
+_Bird_ monitoring data is curated by the Finnish Museum of Natural History, and available through the Finnish Biodiversity Information Facility, FinBIF (https://laji.fi).
 
-*Butterfly* monitoring data is curated by the Finnish Environment Institute (SYKE), data can be accessed through the European butterfly transect dataset through eBMS after formally completing a license form (https://butterfly-monitoring.net/ebms-dataaccess).
+_Butterfly_ monitoring data is curated by the Finnish Environment Institute (SYKE), data can be accessed through the European butterfly transect dataset through eBMS after formally completing a license form (https://butterfly-monitoring.net/ebms-dataaccess).
 
-*Moth* monitoring data is curated by the Finnish Environment Institute (SYKE), and available through the Finnish Biodiversity Information Facility, FinBIF (https://laji.fi/en/observation/list?sourceId=KE.1501).
+_Moth_ monitoring data is curated by the Finnish Environment Institute (SYKE), and available through the Finnish Biodiversity Information Facility, FinBIF (https://laji.fi/en/observation/list?sourceId=KE.1501).
 
-*Large mammals* and *small mammals* datasets belong to the Natural Resources Institute Finland (Luke), any data requests should be sent to kirjaamo@luke.fi.
+_Large mammals_ and _small mammals_ datasets belong to the Natural Resources Institute Finland (Luke), any data requests should be sent to kirjaamo@luke.fi.
 
 <br>
 ### Environmental data
@@ -54,7 +54,7 @@ _________________________________________________________________________
 X. Extra functions   
 
 <br>
-**Description**
+_Description_
 
 <br>
 
