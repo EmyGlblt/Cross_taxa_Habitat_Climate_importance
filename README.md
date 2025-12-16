@@ -6,12 +6,14 @@ We used Bayesian joint species distribution models and variance partition to inv
 
 _Disclaimer_: The code in this repository represents one version of the code developed for the project and may yet undergo changes and revisions.
 _Authors_: The Hmsc code was developed through collaboration between Emy Guilbault and Mirkka Jones. The variance partitioning code was developed through collaboration between Emy Guilbault and Jarno Vanhatalo.
-
+<br>
 
 ## Data files
 
 The code and data used in the current analyses are available in GitHub [code available here] and Zenodo [link to be provided upon acceptance]. Only processed data for the analyses (without coordinates) are available. 
 Data have been collected in systematic and organized monitoring programs lead by the Natural Resources Institute Finland and Finnish Environment Institute. Species specific monitoring programs have followed their own sampling strategy, which are described in the Materials and Methods section. Given the substantial number of sampled sites and to have manageable computational running times, we used stratified sampling to subsample representative sites in time and space for birds and mammals. Finally, we retained species with at least 40 observations in this period in our models; thus, rare species were omitted to prevent model overfitting.
+<br>
+
 
 ### Species data
 
@@ -22,7 +24,7 @@ _Butterfly_ monitoring data is curated by the Finnish Environment Institute (SYK
 _Moth_ monitoring data is curated by the Finnish Environment Institute (SYKE), and available through the Finnish Biodiversity Information Facility, FinBIF (https://laji.fi/en/observation/list?sourceId=KE.1501).
 
 _Large mammals_ and _small mammals_ datasets belong to the Natural Resources Institute Finland (Luke), any data requests should be sent to kirjaamo@luke.fi.
-
+<br>
 
 ### Environmental data
 
