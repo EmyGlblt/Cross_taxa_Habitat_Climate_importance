@@ -44,11 +44,11 @@ The scripts provided in this repository cover the following:
    - Sensitivity                _Contains one script related to buffer size sensitivity results investigation (Check_sensitivityResch4.R) and 2 scripts looking at the variance partitioning (VP) grouping for occurrence and abundance data._
 2. Postprocessing               _Present the new variance partition summaries code and how to extract them from Hmsc models, plot results and perform joint variance partition interpretation._
    - Script_VP_extract
-             -  _*New* variance partition summaries code (computeVarPartSummaries_111125.R), linear term correlation function (Corr_function.R), script to extract variance partition summaries adapted from Schulz et al. (2025) (Extract_NMCDP.R), conditional variance partition (Extract_VCPcond.R) and for functional traits (Extract_VP_traits.R)._
+            > [!NOTE]  _*New* variance partition summaries code (computeVarPartSummaries_111125.R), linear term correlation function (Corr_function.R), script to extract variance partition summaries adapted from Schulz et al. (2025) (Extract_NMCDP.R), conditional variance partition (Extract_VCPcond.R) and for functional traits (Extract_VP_traits.R)._
    - VP_joint_interp
-             -  _*New* code to interpret the joint variation between environmental drivers provided for both occurrence and abundance data on separate scripts._
+            > [!NOTE]  _*New* code to interpret the joint variation between environmental drivers provided for both occurrence and abundance data on separate scripts._
    - VP_plotting
-             - _ Provide all script to recreate the figures in the main and supplementary part of the manuscript Euler plots (figure 2), termplots (figure 2, 3 and 4), joint effects of environemntal frivers (figure 5) and variance partition summaries from the supplementary: density plots (VP_val_density.R) and driver dominance (Driver_dominance.R and Driver_dominance_cond.R)
+            > [!NOTE] _ Provide all script to recreate the figures in the main and supplementary part of the manuscript Euler plots (figure 2), termplots (figure 2, 3 and 4), joint effects of environemntal frivers (figure 5) and variance partition summaries from the supplementary: density plots (VP_val_density.R) and driver dominance (Driver_dominance.R and Driver_dominance_cond.R)
 X. Extra functions               _Contains scripts for data summarizing (TableCLCdata.R, TableCLCprop.R), data processing (cHmsc.R from the HMSC package), data analysing (Corr_function.R) and data plotting (Finbr_niceplot.R and function_ggplot_strip_color.R from https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip)_
 
 
