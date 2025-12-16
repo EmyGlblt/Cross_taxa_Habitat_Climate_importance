@@ -55,6 +55,8 @@ X. Extra functions
 
 **Description**
 
+
+
 1. Model
    - Hmsc_models
 > [!NOTE]
@@ -70,18 +72,25 @@ X. Extra functions
 > [!NOTE]
 > _Contains one script related to buffer size sensitivity results investigation (Check_sensitivityResch4.R) and 2 scripts looking at the variance partitioning (VP) grouping for occurrence and abundance data._
 
+
+
 2. Postprocessing              
 > [!NOTE]
 > _Present the new variance partition summaries code and how to extract them from Hmsc models, plot results and perform joint variance partition interpretation._
+   
    - Script_VP_extract
 > [!IMPORTANT]
 > _*New* variance partition summaries code (computeVarPartSummaries_111125.R), linear term correlation function (Corr_function.R), script to extract variance partition summaries adapted from Schulz et al. (2025) (Extract_NMCDP.R), conditional variance partition (Extract_VCPcond.R) and for functional traits (Extract_VP_traits.R)._
+   
    - VP_joint_interp
 > [!IMPORTANT]
 > _*New* code to interpret the joint variation between environmental drivers provided for both occurrence and abundance data on separate scripts._
+   
    - VP_plotting
 > [!IMPORTANT]
 > _ Provide all script to recreate the figures in the main and supplementary part of the manuscript Euler plots (figure 2), termplots (figure 2, 3 and 4), joint effects of environemntal frivers (figure 5) and variance partition summaries from the supplementary: density plots (VP_val_density.R) and driver dominance (Driver_dominance.R and Driver_dominance_cond.R)
+
+
 
 X. Extra functions              
 > [!NOTE]
