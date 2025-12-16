@@ -34,6 +34,8 @@ The method section described the preparation of environmental covariates used in
 ## R analyses
 <br>
 The scripts provided in this repository cover the following:
+_________________________________________________________________________
+<br>
 1. Model
    - Hmsc_models
      - occ
@@ -43,13 +45,11 @@ The scripts provided in this repository cover the following:
      - ab
    - Sensitivity               
 
-
 2. Postprocessing     
    - Script_VP_extract
    - VP_joint_interp
    - VP_plotting
 
-   
 X. Extra functions   
 
 <br>
