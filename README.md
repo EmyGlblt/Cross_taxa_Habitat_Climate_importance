@@ -7,7 +7,7 @@ We used Bayesian joint species distribution models and variance partition to inv
 _Disclaimer_: The code in this repository represents one version of the code developed for the project and may yet undergo changes and revisions.
 _Authors_: The Hmsc code was developed through collaboration between Emy Guilbault and Mirkka Jones. The variance partitioning code was developed through collaboration between Emy Guilbault and Jarno Vanhatalo.
 
-<br>
+
 ## Data files
 
 The code and data used in the current analyses are available in GitHub [code available here] and Zenodo [link to be provided upon acceptance]. Only processed data for the analyses (without coordinates) are available. 
@@ -23,7 +23,7 @@ _Moth_ monitoring data is curated by the Finnish Environment Institute (SYKE), a
 
 _Large mammals_ and _small mammals_ datasets belong to the Natural Resources Institute Finland (Luke), any data requests should be sent to kirjaamo@luke.fi.
 
-<br>
+
 ### Environmental data
 
 The *climatic* variables are available from the Finnish Meteorological Institute (https://etsin.fairdata.fi/datasets/fmi?keys=Finnish%20Meteorological%20Insitute&terms=organization_name_en.keyword&p=1&sort=best). 
