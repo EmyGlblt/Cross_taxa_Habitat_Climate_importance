@@ -7,7 +7,7 @@ We used Bayesian joint species distribution models and variance partition to inv
 _Disclaimer_: The code in this repository represents one version of the code developed for the project and may yet undergo changes and revisions.
 _Authors_: The Hmsc code was developed through collaboration between Emy Guilbault and Mirkka Jones. The variance partitioning code was developed through collaboration between Emy Guilbault and Jarno Vanhatalo.
 
-
+<br>
 ## Data files
 
 The code and data used in the current analyses are available in GitHub [code available here] and Zenodo [link to be provided upon acceptance]. Only processed data for the analyses (without coordinates) are available. 
@@ -23,7 +23,7 @@ Data have been collected in systematic and organized monitoring programs lead by
 
 *Large mammals* and *small mammals* datasets belong to the Natural Resources Institute Finland (Luke), any data requests should be sent to kirjaamo@luke.fi.
 
-
+<br>
 ### Environmental data
 
 The *climatic* variables are available from the Finnish Meteorological Institute (https://etsin.fairdata.fi/datasets/fmi?keys=Finnish%20Meteorological%20Insitute&terms=organization_name_en.keyword&p=1&sort=best). 
@@ -32,7 +32,7 @@ The method section described the preparation of environmental covariates used in
 
 
 ## R analyses
-
+<br>
 The scripts provided in this repository cover the following:
 1. Model
    - Hmsc_models
@@ -52,10 +52,10 @@ The scripts provided in this repository cover the following:
    
 X. Extra functions   
 
-
+<br>
 **Description**
 
-
+<br>
 
 1. Model
    - Hmsc_models
@@ -72,7 +72,7 @@ X. Extra functions
 > [!NOTE]
 > _Contains one script related to buffer size sensitivity results investigation (Check_sensitivityResch4.R) and 2 scripts looking at the variance partitioning (VP) grouping for occurrence and abundance data._
 
-
+<br>
 
 2. Postprocessing              
 > [!NOTE]
@@ -90,15 +90,17 @@ X. Extra functions
 > [!IMPORTANT]
 > _ Provide all script to recreate the figures in the main and supplementary part of the manuscript Euler plots (figure 2), termplots (figure 2, 3 and 4), joint effects of environemntal frivers (figure 5) and variance partition summaries from the supplementary: density plots (VP_val_density.R) and driver dominance (Driver_dominance.R and Driver_dominance_cond.R)
 
-
+<br>
 
 X. Extra functions              
 > [!NOTE]
 > _Contains scripts for data summarizing (TableCLCdata.R, TableCLCprop.R), data processing (cHmsc.R from the HMSC package), data analysing (Corr_function.R) and data plotting (Finbr_niceplot.R and function_ggplot_strip_color.R from https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip)_
 
-
+<br>
 Analyses were performed in R software (>4.4). Specifically, we used Hmsc software (3.3).
 
+<br>
+<br>
 
 _References_
 
