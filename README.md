@@ -13,6 +13,9 @@ _Authors_: The Hmsc code was developed through collaboration between Emy Guilbau
 The code and data used in the current analyses are available in GitHub [code available here] and Zenodo [link to be provided upon acceptance]. Only processed data for the analyses (without coordinates) are available. 
 Data have been collected in systematic and organized monitoring programs lead by the Natural Resources Institute Finland and Finnish Environment Institute. Species specific monitoring programs have followed their own sampling strategy, which are described in the Materials and Methods section. Given the substantial number of sampled sites and to have manageable computational running times, we used stratified sampling to subsample representative sites in time and space for birds and mammals. Finally, we retained species with at least 40 observations in this period in our models; thus, rare species were omitted to prevent model overfitting.
 <br>
+Location:  Finland, Northern Europe.
+
+Time period: 1999-2019
 
 
 ### Species data
