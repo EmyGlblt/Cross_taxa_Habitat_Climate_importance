@@ -112,5 +112,6 @@ Analyses were performed in R software (>4.4). Specifically, we used Hmsc softwar
 _References_
 
 Ovaskainen, O., & Abrego, N. (2020). Joint species distribution modelling: With applications in R. Cambridge University Press.
+
 Schulz, T., Saastamoinen, M. and Vanhatalo, J. (2025). “ Model-Based Variance Partitioning for Statistical Ecology.” Ecological Monographs 95(1): e1646. https://doi.org/10.1002/ecm.1646
 
