@@ -174,6 +174,7 @@ spvp_summaries = function(vpdat, Threshold){
   for (s in 1:dim(vpdat)[3]) {
     for (p in 1:dim(vpdat)[4]) {
       # Find the index of the maximum value for this species and sample
+      is.na(vpdat[,,s,p]) = 0 # prevent numerical problens
       max_val <- max(diag(vpdat[,,s,p]))
       max_indices <- which(diag(vpdat[,,s,p]) == max_val, arr = TRUE)
 

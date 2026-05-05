@@ -15,7 +15,7 @@ library(tidyr)
 
 ##...............................................  occurrence data
 
-setwd("C:/Users/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Data/4.VPanalyses/VP_cond_trait")
+setwd("~/Data/4.VPanalyses/VP_cond_trait") # to adapt depending on where it is saved
 
 #
 #   Occurrence
@@ -45,7 +45,7 @@ for (i in 1:dim(VP.test1_rod$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.rod <- aperm(array(TabMF_rod$TjurR2, dim = c(1000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.rod <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.rod)
 
 VPfix.rodNB = varr.rod*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -96,7 +96,7 @@ for (i in 1:dim(VP.test1_bf$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.bf <- aperm(array(TabMF_bf$TjurR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.bf <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.bf)
 
 VPfix.bfNB = varr.bf*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -145,7 +145,7 @@ for (i in 1:dim(VP.test1_moth$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.moth <- aperm(array(TabMF_Moth$TjurR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.moth <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.moth)
 
 VPfix.mothNB = varr.moth*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -196,7 +196,7 @@ for (i in 1:dim(VP.test1_wg$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.wg <- aperm(array(TabMF_wg$TjurR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.wg <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.wg)
 
 VPfix.wgNB = varr.wg*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -246,7 +246,7 @@ for (i in 1:dim(VP.test1_bd$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.bd <- aperm(array(TabMF_bd$TjurR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.bd <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.bd)
 
 VPfix.bdNB = varr.bd*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -596,7 +596,7 @@ for (i in 1:dim(VP.test1_rod$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.rod <- aperm(array(TabMF_rod$SR2, dim = c(2000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.rod <- aperm(array(TabMF_rod$SR2, dim = c(8L, 3L, 3L, 2000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.rod)
 
 VPfix.rodNB = varr.rod*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -647,7 +647,7 @@ for (i in 1:dim(VP.test1_bf$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.bf <- aperm(array(TabMF_bf$SR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.bf <- aperm(array(TabMF_bf$SR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.bf)
 
 VPfix.bfNB = varr.bf*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -696,7 +696,7 @@ for (i in 1:dim(VP.test1_moth$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.moth <- aperm(array(TabMF_Moth$SR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.moth <- aperm(array(TabMF_Moth$SR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.moth)
 
 VPfix.mothNB = varr.moth*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -747,7 +747,7 @@ for (i in 1:dim(VP.test1_wg$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.wg <- aperm(array(TabMF_wg$SR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.wg <- aperm(array(TabMF_wg$SR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.wg)
 
 VPfix.wgNB = varr.wg*VP.test_cond[1:3, 1:3,,,'NB'] # NB
@@ -797,7 +797,7 @@ for (i in 1:dim(VP.test1_bd$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr.bd <- aperm(array(TabMF_bd$SR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr.bd <- aperm(array(TabMF_bd$SR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.bd)
 
 VPfix.bdNB = varr.bd*VP.test_cond[1:3, 1:3,,,'NB'] # NB

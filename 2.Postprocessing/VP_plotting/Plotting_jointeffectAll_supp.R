@@ -6,10 +6,10 @@ library(ggridges)
 library(geomtextpath)
 
 # for plotting later
-setwd('C:/Users/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Code/x.New_functions')
+setwd("~/Code/x.New_functions")
 source("function_ggplot_strip_color.R")
 
-setwd('C:/Users/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Data/4.VPanalyses/Joint_interp')
+setwd("~/Data/4.VPanalyses/Joint_interp")
 
 ## Occurrence data .................................................
 load('VP_C1resc_all_occ1111.RDATA')

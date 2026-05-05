@@ -23,7 +23,7 @@ library(ggpubr)
 library(grid)
 
 
-setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait") # to adapt depending on where it is saved
 
 load('VPtrait_rod.RDATA')
 load('VPtrait_bf.RDATA')

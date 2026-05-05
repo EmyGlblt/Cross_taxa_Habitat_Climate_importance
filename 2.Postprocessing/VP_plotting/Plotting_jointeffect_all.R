@@ -7,10 +7,10 @@ library(geomtextpath)
 library(dplyr)
 
 # for plotting later
-setwd('C:/Users/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Code/x.New_functions')
+setwd("~/Code/x.New_functions")
 source("function_ggplot_strip_color.R")
 
-setwd('C:/Users/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Data/4.VPanalyses/Joint_interp')
+setwd("~/Data/4.VPanalyses/Joint_interp")
 
 ## Occurrence data .................................................
 load('VP_C1resc_all_occ1111.RDATA')
@@ -154,7 +154,9 @@ for (i in idx) gp$grobs[[i]] <- gg_old$grobs[[i]]
 grid.newpage()
 grid.draw(gp) 
 
-png("JointInter_sc_occ.png") 
+png("JointInter_sc_occ.png", type = "cairo", units="in", width=10, height=7, res=300) 
+#tiff("JointInter_sc_occ.tif") 
+#tiff("JointInter_sc_occ.tiff", units="in", width=10, height=7, res=300)
 grid.draw(gp) 
 dev.off()
 #tiff("JointI_occ.tiff", width= 1216, height= 876, units="px", res=300)
@@ -235,7 +237,7 @@ for (i in idx) gp_ab$grobs[[i]] <- gg_old$grobs[[i]]
 grid.newpage()
 grid.draw(gp_ab)
 
-png("JointInter_sc_ab.png") 
+png("JointInter_sc_ab.png", type = "cairo", units="in", width=10, height=7, res=300) 
 grid.draw(gp_ab) 
 dev.off()
 
