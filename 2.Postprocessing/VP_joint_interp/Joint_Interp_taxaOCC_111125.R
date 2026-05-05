@@ -279,15 +279,5 @@ rc_un$col_name = factor(rc_un$col_name,
 
 VP_C_all_occ = VP_C_all
 
-
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/Joint_interp")
 save(VP_C_all_occ, file = 'VP_C1resc_all_occ1111.RDATA')
-
-
-_C_all_occ = VP_C_all
-
-
-setwd("D:/Helsinki/RECcII/Joint_interpretation_part")
-save(VP_C_all_occ, file = 'VP_C1resc_all_occ1010.RDATA')
-
-
