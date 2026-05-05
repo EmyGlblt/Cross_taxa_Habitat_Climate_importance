@@ -15,7 +15,7 @@ library(tidyr)
 
 ##...............................................  occurrence data
 
-setwd("C:/Users/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Data/4.VPanalyses/VPCP")
+setwd("~/Data/4.VPanalyses/VPCP") # to adapt depending on where it is saved
 
 load('VPCP_rod.RDATA')
 dim(VP.test3_rod$Vdiag)
@@ -36,7 +36,7 @@ for (i in 1:dim(VP.test3_rod$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_rod$TjurR2, dim = c(1000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 VPfixR2.rod = varr*VP.test3[1:3, 1:3, ,]
@@ -62,7 +62,7 @@ for (i in 1:dim(VP.test3_bf$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bf$TjurR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -89,7 +89,7 @@ for (i in 1:dim(VP.test3_wg$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_wg$TjurR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -116,7 +116,7 @@ for (i in 1:dim(VP.test3_bd$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bd$TjurR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 
 VPfixR2.bd = varr*VP.test3[1:3, 1:3, ,]
 
@@ -141,7 +141,7 @@ for (i in 1:dim(VP.test3_moth$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -288,7 +288,7 @@ for (i in 1:dim(VP.test3_rod$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_rod$SR2, dim = c(2000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_rod$SR2, dim = c(8L, 3L, 3L, 2000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 VPfixR2.rod = varr*VP.test3[1:3, 1:3, ,]
@@ -314,7 +314,7 @@ for (i in 1:dim(VP.test3_bf$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bf$SR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bf$SR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -341,7 +341,7 @@ for (i in 1:dim(VP.test3_wg$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_wg$SR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_wg$SR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -368,7 +368,7 @@ for (i in 1:dim(VP.test3_bd$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bd$SR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bd$SR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 
 VPfixR2.bd = varr*VP.test3[1:3, 1:3, ,]
 
@@ -393,7 +393,7 @@ for (i in 1:dim(VP.test3_moth$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_Moth$SR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_Moth$SR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -413,8 +413,8 @@ dim(VPfixR2.wg)
 
 
 # test
-vpdat = VPfixR2.rod
-vpdat = VPfixR2.moth
+# vpdat = VPfixR2.rod
+# vpdat = VPfixR2.moth
 
 
 spvp_summaries = function(vpdat, Threshold){
@@ -428,7 +428,9 @@ spvp_summaries = function(vpdat, Threshold){
   for (s in 1:dim(vpdat)[3]) {
     for (p in 1:dim(vpdat)[4]) {
       # Find the index of the maximum value for this species and sample
-      max_val <- max(diag(vpdat[,,s,p]))
+      # 
+      is.na(vpdat[,,s,p]) = 0 # prevent numerical problens
+      max_val <- max(diag(vpdat[,,s,p]), na.rm=T)
       max_indices <- which(diag(vpdat[,,s,p]) == max_val, arr = TRUE)
       
       max_count[max_indices, s] <- max_count[max_indices, s] + 1
@@ -439,7 +441,7 @@ spvp_summaries = function(vpdat, Threshold){
   # calculate among the species that are not NA (R2) so using ColSums instead of dim(Vpdat[4])
   prop_max <- max_count / colSums(max_count)
   
-  prop_sp <- rowMeans(prop_max >= Threshold)
+  prop_sp <- rowMeans(prop_max >= Threshold, na.rm=T)
   
   # prop_species now contains the proportion for each covariate
   print(prop_sp)
