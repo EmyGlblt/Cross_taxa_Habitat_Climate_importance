@@ -259,7 +259,8 @@ save(BfDat_trait_ab, file='VPtrait_ab_bf.RDATA')
 # #    Occurrence
 
 
-setwd("~/Data/4.VPanalyses/VPCP")load('VPCP_moth.RDATA') # to get variance and covariance idf interested in. (VP.test3)
+setwd("~/Data/4.VPanalyses/VPCP")
+load('VPCP_moth.RDATA') # to get variance and covariance idf interested in. (VP.test3)
 
 dim(VP.test3_moth$Vnorm)
 dim(VP.test3_moth$Cnorm)
