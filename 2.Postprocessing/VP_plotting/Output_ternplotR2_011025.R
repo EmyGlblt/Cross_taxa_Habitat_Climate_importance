@@ -28,7 +28,7 @@ names(wes_palettes)
 #remotes::install_github("clauswilke/colorblindr")
 library(colorblindr)
 
-setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VPCP") # to adapt depending on where it is saved
 
 #
 #   Occurrence
@@ -56,7 +56,7 @@ for (i in 1:dim(VP.test3_rod$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_rod$TjurR2, dim = c(1000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 Mean.fix.sprod = apply(varr*VP.test3[1:3, 1:3, ,], c(1, 2, 3), mean, na.rm=T)
@@ -82,7 +82,7 @@ for (i in 1:dim(VP.test3_bf$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bf$TjurR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -109,7 +109,7 @@ for (i in 1:dim(VP.test3_wg$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_wg$TjurR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -136,7 +136,7 @@ for (i in 1:dim(VP.test3_bd$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bd$TjurR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 
 Mean.fix.spbd = apply(varr*VP.test3[1:3, 1:3, ,], c(1, 2, 3), mean, na.rm=T)
 
@@ -161,7 +161,7 @@ for (i in 1:dim(VP.test3_moth$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -229,7 +229,7 @@ VP.sp2$habConf = VP.sp2$habConf*100/VP.sp2$sum
 ## add group means
 VP.spmean = VP.sp2 %>%
   group_by(taxa) %>%
-  summarise_all(list(mean))
+  summarise_all(list(mean), na.rm=T)
 
 Newcol = c("#D1A10A", "#05662C", "#B5BF99", "#9D6058", "#762310")
 
@@ -242,17 +242,17 @@ Tern_occ = ggtern(VP.sp2, aes(habprop, Climate, habConf, fill = taxa, color=taxa
   scale_fill_manual(values = Newcol) +
   geom_point(aes(color = taxa), shape = 4, size = 0.7) +
   scale_color_manual(values = Newcol) +
-  geom_crosshair_tern(data = VP.spmean, lty = 2, size = 2) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.spmean, lty = 2, linewidth = 2) +  # add mean information and lines
   geom_point(data = VP.spmean, aes(color = taxa), show.legend = F) + 
   #scale_color_manual(values = c("#D8B90D", "#01401D", "#A1B142", "#41A66D", "#672A25")) +
   #labs(title  = "VP taxa", Larrow = "% habitat prop", Tarrow = "% Climate", Rarrow = "% habitat configuration") +
   theme_showarrows() +
-  theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
-        tern.axis.arrow.T = element_line(size=0, color="white"),
-        tern.axis.arrow.R = element_line(size=0, color="white"),
-        tern.axis.line.L = element_line(color='orange3',size=2),
-        tern.axis.line.T = element_line(color='#66C2A5',size=2),
-        tern.axis.line.R = element_line(color='yellow3',size=2),
+  theme(tern.axis.arrow.L = element_line(linewidth=0, color='white'), 
+        tern.axis.arrow.T = element_line(linewidth=0, color="white"),
+        tern.axis.arrow.R = element_line(linewidth=0, color="white"),
+        tern.axis.line.L = element_line(color='orange3',linewidth=2),
+        tern.axis.line.T = element_line(color='#66C2A5',linewidth=2),
+        tern.axis.line.R = element_line(color='yellow3',linewidth=2),
         axis.text = element_text(size = 18),
         axis.title = element_text(size = 20)) + 
   guides(alpha='none', colour='none') + 
@@ -322,7 +322,7 @@ for (i in 1:dim(VP.test3_rod$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_rod$SR2, dim = c(2000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_rod$SR2, dim = c(8L, 3L, 3L, 2000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 Mean.fix.sprod = apply(varr*VP.test3[1:3, 1:3, ,], c(1, 2, 3), mean, na.rm=T)
@@ -348,7 +348,7 @@ for (i in 1:dim(VP.test3_bf$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bf$SR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bf$SR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -375,7 +375,7 @@ for (i in 1:dim(VP.test3_wg$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_wg$SR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_wg$SR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -402,7 +402,7 @@ for (i in 1:dim(VP.test3_bd$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_bd$SR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bd$SR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 
 Mean.fix.spbd = apply(varr*VP.test3[1:3, 1:3, ,], c(1, 2, 3), mean, na.rm=T)
 
@@ -427,7 +427,7 @@ for (i in 1:dim(VP.test3_moth$Vdiag)[4]){  ## mcmc samples
 }
 
 
-varr <- aperm(array(TabMF_Moth$SR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_Moth$SR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 
@@ -495,7 +495,7 @@ VP.sp2$habConf = VP.sp2$habConf*100/VP.sp2$sum
 ## add group means
 VP.spmean = VP.sp2 %>%
   group_by(taxa) %>%
-  summarise_all(list(mean))
+  summarise_all(list(mean), na.rm=T)
 
 Newcol = c("#D1A10A", "#05662C", "#B5BF99", "#9D6058", "#762310")
 
@@ -508,17 +508,17 @@ Tern_ab = ggtern(VP.sp2, aes(habprop, Climate, habConf, fill = taxa, color=taxa)
   scale_fill_manual(values = Newcol) +
   geom_point(aes(color = taxa), shape = 4, size = 0.7) +
   scale_color_manual(values = Newcol) +
-  geom_crosshair_tern(data = VP.spmean, lty = 2, size = 2) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.spmean, lty = 2, linewidth = 2) +  # add mean information and lines
   geom_point(data = VP.spmean, aes(color = taxa), show.legend = F) + 
   #scale_color_manual(values = c("#D8B90D", "#01401D", "#A1B142", "#41A66D", "#672A25")) +
   #labs(title  = "VP taxa", Larrow = "% habitat prop", Tarrow = "% Climate", Rarrow = "% habitat configuration") +
   theme_showarrows() +
-  theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
-        tern.axis.arrow.T = element_line(size=0, color="white"),
-        tern.axis.arrow.R = element_line(size=0, color="white"),
-        tern.axis.line.L = element_line(color='orange3',size=2),
-        tern.axis.line.T = element_line(color='#66C2A5',size=2),
-        tern.axis.line.R = element_line(color='yellow3',size=2),
+  theme(tern.axis.arrow.L = element_line(linewidth=0, color='white'), 
+        tern.axis.arrow.T = element_line(linewidth=0, color="white"),
+        tern.axis.arrow.R = element_line(linewidth=0, color="white"),
+        tern.axis.line.L = element_line(color='orange3',linewidth=2),
+        tern.axis.line.T = element_line(color='#66C2A5',linewidth=2),
+        tern.axis.line.R = element_line(color='yellow3',linewidth=2),
         axis.text = element_text(size = 18),
         axis.title = element_text(size = 20)) + 
   guides(alpha='none', colour='none') + 

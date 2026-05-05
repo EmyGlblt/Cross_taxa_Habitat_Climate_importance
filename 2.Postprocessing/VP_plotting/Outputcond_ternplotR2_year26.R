@@ -481,7 +481,7 @@ ternbtw = ggtern(VP.sp.btw, aes(habprop, Climate, habConf, fill = taxa, color=ta
   scale_fill_manual(values = Newcol) +
   #geom_point(aes(color = taxa), shape = 4, size = 0.4) +
   scale_color_manual(values = Newcol) +
-  geom_crosshair_tern(data = VP.spmeanbtw, lty = 2, size = 3.2) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.spmeanbtw, lty = 2, linewidth = 3.2) +  # add mean information and lines
   geom_point(data = VP.spmeanbtw, aes(color = taxa), show.legend = F) + 
   #scale_color_manual(values = c("#D8B90D", "#01401D", "#A1B142", "#41A66D", "#672A25")) +
   #labs(title  = "VP taxa", Larrow = "% habitat prop", Tarrow = "% Climate", Rarrow = "% habitat configuration") +
@@ -532,7 +532,7 @@ ternwit = ggtern(VP.sp.wit, aes(habprop, Climate, habConf, fill = taxa, color=ta
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = Newcol) +
   scale_color_manual(values = Newcol) +
-  geom_crosshair_tern(data = VP.spmeanwit, lty = 2, size = 3.2) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.spmeanwit, lty = 2, linewidth = 3.2) +  # add mean information and lines
   geom_point(data = VP.spmeanwit, aes(color = taxa), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),

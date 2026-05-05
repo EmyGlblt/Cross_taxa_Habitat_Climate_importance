@@ -74,11 +74,11 @@ mothDat_trait2 = mothDat_trait[,c(1:4, 5, 8, 6, 9)]
 summary(mothDat_trait2)
 
 ### cat - body length
-hist(mothDat_trait2$Body.size)
+hist(mothDat_trait2$Body.Size)
 mothDat_trait2$BodySize = NA
 
-mothDat_trait2$BodySize[mothDat_trait2$Body.size <= 32] = 'small'
-mothDat_trait2$BodySize[mothDat_trait2$Body.size > 32] = 'Large'
+mothDat_trait2$BodySize[mothDat_trait2$Body.Size <= 32] = 'small'
+mothDat_trait2$BodySize[mothDat_trait2$Body.Size > 32] = 'Large'
 
 table(mothDat_trait2$BodySize)
 
@@ -246,7 +246,7 @@ ternBirdHL = ggtern(VP.birds, aes(habprop, Climate, habConf, fill = Lpyear, colo
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#99CC66','#009999')) +
   scale_color_manual(values = c('#99CC96','#009969')) +
-  geom_crosshair_tern(data = VP.birdsHLmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.birdsHLmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.birdsHLmean, aes(color = Lpyear), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -298,7 +298,7 @@ ternBirdHS = ggtern(VP.birds, aes(habprop, Climate, habConf, fill = Habspe, colo
   scale_fill_manual(values = c('#FFCC33','#996633')) +
   #geom_point(aes(color = taxa), shape = 4, size = 0.4) +
   scale_color_manual(values = c('#FFCC83','#795653')) +
-  geom_crosshair_tern(data = VP.birdsHSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.birdsHSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.birdsHSmean, aes(color = Habspe), show.legend = F) + 
   #scale_color_manual(values = c("#D8B90D", "#01401D", "#A1B142", "#41A66D", "#672A25")) +
   #labs(title  = "VP taxa", Larrow = "% habitat prop", Tarrow = "% Climate", Rarrow = "% habitat configuration") +
@@ -353,7 +353,7 @@ ternBirdBS = ggtern(VP.birds, aes(habprop, Climate, habConf, fill = BodySize, co
   scale_fill_manual(values = c('#FF85FF','#660099')) +
   #geom_point(aes(color = taxa), shape = 4, size = 0.4) +
   scale_color_manual(values =c('#FF35FF','#665099')) +
-  geom_crosshair_tern(data = VP.birdsBSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.birdsBSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.birdsBSmean, aes(color = BodySize), show.legend = F) + 
   #scale_color_manual(values = c("#D8B90D", "#01401D", "#A1B142", "#41A66D", "#672A25")) +
   #labs(title  = "VP taxa", Larrow = "% habitat prop", Tarrow = "% Climate", Rarrow = "% habitat configuration") +
@@ -408,7 +408,7 @@ ternbuttflyHL = ggtern(VP.buttfly, aes(habprop, Climate, habConf, fill = Lpyear,
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#99CC66','#009999')) +
   scale_color_manual(values = c('#99CC96','#009969')) +
-  geom_crosshair_tern(data = VP.buttflyHLmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.buttflyHLmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.buttflyHLmean, aes(color = Lpyear), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -451,7 +451,7 @@ ternbuttflyHS = ggtern(VP.buttfly, aes(habprop, Climate, habConf, fill = Habspe,
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FFCC33','#996633')) +
   scale_color_manual(values = c('#FFCC83','#795653')) +
-  geom_crosshair_tern(data = VP.buttflyHSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.buttflyHSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.buttflyHSmean, aes(color = Habspe), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -494,7 +494,7 @@ ternbuttflyBS = ggtern(VP.buttfly, aes(habprop, Climate, habConf, fill = BodySiz
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FF85FF','#660099')) +
   scale_color_manual(values =c('#FF35FF','#665099')) +
-  geom_crosshair_tern(data = VP.buttflyBSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.buttflyBSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.buttflyBSmean, aes(color = BodySize), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -544,7 +544,7 @@ ternMothHL = ggtern(VP.Moth, aes(habprop, Climate, habConf, fill = Lpyear, color
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#99CC66','#009999')) +
   scale_color_manual(values = c('#99CC96','#009969')) +
-  geom_crosshair_tern(data = VP.MothHLmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.MothHLmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.MothHLmean, aes(color = Lpyear), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -588,7 +588,7 @@ ternMothHS = ggtern(VP.Moth, aes(habprop, Climate, habConf, fill = Habspe, color
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FFCC33','#996633')) +
   scale_color_manual(values = c('#FFCC83','#795653')) +
-  geom_crosshair_tern(data = VP.MothHSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.MothHSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.MothHSmean, aes(color = Habspe), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -632,7 +632,7 @@ ternMothBS = ggtern(VP.Moth, aes(habprop, Climate, habConf, fill = BodySize, col
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FF85FF','#660099')) +
   scale_color_manual(values =c('#FF35FF','#665099')) +
-  geom_crosshair_tern(data = VP.MothBSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.MothBSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.MothBSmean, aes(color = BodySize), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -689,7 +689,7 @@ ternRodentHL = ggtern(VP.Rodent, aes(habprop, Climate, habConf, fill = Lpyear, c
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#99CC66','#009999')) +
   scale_color_manual(values = c('#99CC96','#009969')) +
-  geom_crosshair_tern(data = VP.RodentHLmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.RodentHLmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.RodentHLmean, aes(color = Lpyear), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -732,7 +732,7 @@ ternRodentHS = ggtern(VP.Rodent, aes(habprop, Climate, habConf, fill = Habspe, c
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FFCC33','#996633')) +
   scale_color_manual(values = c('#FFCC83','#795653')) +
-  geom_crosshair_tern(data = VP.RodentHSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.RodentHSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.RodentHSmean, aes(color = Habspe), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -775,7 +775,7 @@ ternRodentBS = ggtern(VP.Rodent, aes(habprop, Climate, habConf, fill = BodySize,
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FF85FF','#660099')) +
   scale_color_manual(values =c('#FF35FF','#665099')) +
-  geom_crosshair_tern(data = VP.RodentBSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.RodentBSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.RodentBSmean, aes(color = BodySize), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -822,7 +822,7 @@ ternWGHL = ggtern(VP.WG, aes(habprop, Climate, habConf, fill = Lpyear, color=Lpy
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#99CC66','#009999')) +
   scale_color_manual(values = c('#99CC96','#009969')) +
-  geom_crosshair_tern(data = VP.WGHLmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.WGHLmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.WGHLmean, aes(color = Lpyear), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -866,7 +866,7 @@ ternWGHS = ggtern(VP.WG, aes(habprop, Climate, habConf, fill = Habspe, color=Hab
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FFCC33','#996633')) +
   scale_color_manual(values = c('#FFCC83','#795653')) +
-  geom_crosshair_tern(data = VP.WGHSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.WGHSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.WGHSmean, aes(color = Habspe), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
@@ -910,7 +910,7 @@ ternWGBS = ggtern(VP.WG, aes(habprop, Climate, habConf, fill = BodySize, color=B
   scale_alpha_continuous(range = c(0.1, 0.3)) +
   scale_fill_manual(values = c('#FF85FF','#660099')) +
   scale_color_manual(values =c('#FF35FF','#665099')) +
-  geom_crosshair_tern(data = VP.WGBSmean, lty = 2, size = 2.1) +  # add mean information and lines
+  geom_crosshair_tern(data = VP.WGBSmean, lty = 2, linewidth = 2.1) +  # add mean information and lines
   geom_point(data = VP.WGBSmean, aes(color = BodySize), show.legend = F) + 
   theme(tern.axis.arrow.L = element_line(size=0, color='white'), 
         tern.axis.arrow.T = element_line(size=0, color="white"),
