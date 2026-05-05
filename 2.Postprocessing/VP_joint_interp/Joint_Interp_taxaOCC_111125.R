@@ -33,63 +33,63 @@ groupnames1=c("Effort", "Climate", "HoccitatConf", 'Hoccitatprop')      # + 3 ra
 # Scaling by R2 all VP summaries
 # 
 # rod
-varr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+varr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 6L, 1L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 VP.test3_rod$Vnorm = varr * VP.test3_rod$Vnorm
 VP.test3_rod$Vdiag = varr * VP.test3_rod$Vdiag
 
 
 ## Which species have large covariance and which covariance are they?
-Carr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+Carr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 VP.test3_rod$Cnorm = Carr * VP.test3_rod$Cnorm
 VP.test3_rod$Vmarg = Carr * VP.test3_rod$Vmarg
 VP.test3_rod$Vpart = Carr * VP.test3_rod$Vpart
 
 # bf
-varr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+varr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 6L, 1L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 VP.test3_bf$Vnorm = varr * VP.test3_bf$Vnorm
 VP.test3_bf$Vdiag = varr * VP.test3_bf$Vdiag
 
 ## Which species have large covariance and which covariance are they?
-Carr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+Carr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 VP.test3_bf$Cnorm = Carr * VP.test3_bf$Cnorm
 VP.test3_bf$Vmarg = Carr * VP.test3_bf$Vmarg
 VP.test3_bf$Vpart = Carr * VP.test3_bf$Vpart
 
 # moth
-varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 6L, 1L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 VP.test3_moth$Vnorm = varr * VP.test3_moth$Vnorm
 VP.test3_moth$Vdiag = varr * VP.test3_moth$Vdiag
 
 ## Which species have large covariance and which covariance are they?
-Carr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+Carr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 VP.test3_moth$Cnorm = Carr * VP.test3_moth$Cnorm
 VP.test3_moth$Vmarg = Carr * VP.test3_moth$Vmarg
 VP.test3_moth$Vpart = Carr * VP.test3_moth$Vpart
 
 # wg
-varr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+varr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 6L, 1L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 VP.test3_wg$Vnorm = varr * VP.test3_wg$Vnorm
 VP.test3_wg$Vdiag = varr * VP.test3_wg$Vdiag
 
 ## Which species have large covariance and which covariance are they?
-Carr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+Carr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 VP.test3_wg$Cnorm = Carr * VP.test3_wg$Cnorm
 VP.test3_wg$Vmarg = Carr * VP.test3_wg$Vmarg
 VP.test3_wg$Vpart = Carr * VP.test3_wg$Vpart
 
 
 # bird
-varr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+varr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 6L, 1L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 VP.test3_bd$Vnorm = varr * VP.test3_bd$Vnorm
 VP.test3_bd$Vdiag = varr * VP.test3_bd$Vdiag
 
 ## Which species have large covariance and which covariance are they?
-Carr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
+Carr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 VP.test3_bd$Cnorm = Carr * VP.test3_bd$Cnorm
 VP.test3_bd$Vmarg = Carr * VP.test3_bd$Vmarg
 VP.test3_bd$Vpart = Carr * VP.test3_bd$Vpart
