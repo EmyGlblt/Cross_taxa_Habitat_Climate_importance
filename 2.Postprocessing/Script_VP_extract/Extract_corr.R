@@ -10,7 +10,7 @@ library(Hmsc)
 library(reshape2) # necessary for margina cal-> dcast function used
 
 # function to extract correlation between linear terms
-setwd("D:/Helsinki/RECcII/CSC_HMSC")
+setwd("~/Code/3.Postprocessing/Script_VP_extract")
 source('Corr_functions.R')
 
 #
@@ -18,7 +18,7 @@ source('Corr_functions.R')
 #
 ## -------  Occurrence data
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('Rodtest2_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -49,7 +49,7 @@ dim(FRcor_rod) # predictor  predict species mcmc samples
 
 ## -------  Abundance data
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('RodtestAB_ch1_models_thin_1000_samples_500_chains_1.Rdata')
 modelsN1 = models
@@ -80,7 +80,7 @@ dim(FRcorAB_rod)
 #  Bird
 #
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('Birdtest_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -107,7 +107,7 @@ FRcor_bd = Extract_corr(hM=modelsbd, group = group1,
 dim(FRcor_bd)
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('BirdAB2_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -138,7 +138,7 @@ dim(FRcorAB_bd)
 #  moth
 #
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('MothTest2_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -165,7 +165,7 @@ FRcor_moth = Extract_corr(hM=modelsmoth, group = group1,
 dim(FRcor_moth)
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('MothAB_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -196,7 +196,7 @@ dim(FRcorAB_moth)
 #  bf
 #
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('bftest_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -223,7 +223,7 @@ FRcor_bf = Extract_corr(hM=modelsbf, group = group1,
 dim(FRcor_bf)
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('bfAB_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -254,7 +254,7 @@ dim(FRcorAB_bf)
 #  wg
 #
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('WintGtest_ch1_models_thin_1000_samples_250_chainsN1_1.Rdata')
 modelsN1 = models
@@ -281,7 +281,7 @@ FRcor_wg = Extract_corr(hM=modelswg, group = group1,
 dim(FRcor_wg)
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('WintGAB2_ch1_models_thin_1000_samples_250_chainsN1_1.Rdata')
 modelsN1 = models
@@ -307,6 +307,7 @@ FRcorAB_wg = Extract_corr(hM=modelswgAB, group = group1,
 dim(FRcorAB_wg)
 
 ## save them all
+setwd("~/Data/4.VPanalyses/LF_corr")
 
 save(FRcor_bd, FRcor_bf, FRcor_moth, FRcor_rod, FRcor_wg,
      FRcorAB_bd, FRcorAB_bf, FRcorAB_moth, FRcorAB_rod, FRcorAB_wg,

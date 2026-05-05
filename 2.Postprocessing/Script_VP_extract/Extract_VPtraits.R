@@ -17,8 +17,7 @@ library(corrplot)
 # #    Occurrence
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_rod.RDATA') # to get variance and covariance idf interested in. (VP.test3)
 
 dim(VP.test3_rod$Vnorm)
@@ -39,7 +38,7 @@ for (i in 1:dim(VP.test3_rod$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_rod$TjurR2, dim = c(1000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keepin the Normalized variance
@@ -51,7 +50,7 @@ VP.fix.ROD = varr*VP.test3[1:3, 1:3, ,]
 
 rod.sp = TabMF_rod$species
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Traits")
+setwd("~/Data/2.Prep_data/Traits")
 load('Traits_rodmamal.RDATA')
 
 dim(Rodent_trait)
@@ -80,14 +79,14 @@ rodVP$iucn2020_binomial = rod.sp ## order was kept when calculating the VP
 rodDat_trait = merge(rodVP, Rodent_trait_sub, by= 'iucn2020_binomial')
 dim(rodDat_trait)
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(rodDat_trait, file='VPtrait_rod.RDATA')
 
 
 # #
 # #    Abundance
 
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_ab_rod.RDATA')
 dim(VP.test3_rod$Vnorm)
 dim(VP.test3_rod$Cnorm)
@@ -107,7 +106,7 @@ for (i in 1:dim(VP.test3_rod$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_rod$SR2, dim = c(2000L, 8L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_rod$SR2, dim = c(8L, 3L, 3L, 2000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keeping the Normalized variance
@@ -129,7 +128,7 @@ rodVP_ab$iucn2020_binomial = rod.sp
 rodDat_trait_ab = merge(rodVP_ab, Rodent_trait_sub, by= 'iucn2020_binomial')
 dim(rodDat_trait_ab)
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(rodDat_trait_ab, file='VPtrait_ab_rod.RDATA')
 
 
@@ -141,8 +140,7 @@ save(rodDat_trait_ab, file='VPtrait_ab_rod.RDATA')
 # #
 # #    Occurrence
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_bf.RDATA') # to get variance and covariance idf interested in. (VP.test3)
 
 dim(VP.test3_bf$Vnorm)
@@ -163,7 +161,7 @@ for (i in 1:dim(VP.test3_bf$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_bf$TjurR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keepin the Normalized variance
@@ -176,7 +174,7 @@ VP.fix.bf = varr*VP.test3[1:3, 1:3, ,]
 bf.sp = TabMF_bf$species
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Traits")
+setwd("~/Data/2.Prep_data/Traits")
 bf_trait = read.csv('Lep_traits.csv', header=T, sep=',')
 
 dim(bf_trait)
@@ -203,14 +201,13 @@ bfVP$names_rec = bf.sp
 
 BfDat_trait = merge(bfVP, bf_trait_sub, by= 'names_rec')
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(BfDat_trait, file='VPtrait_bf.RDATA')
 
 # #
 # #    Abundance
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_ab_bf.RDATA')
 dim(VP.test3_bf$Vnorm)
 dim(VP.test3_bf$Cnorm)
@@ -230,7 +227,7 @@ for (i in 1:dim(VP.test3_bf$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_bf$SR2, dim = c(1000L, 57L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bf$SR2, dim = c(57L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keeping the Normalized variance
@@ -251,7 +248,7 @@ bfVP_ab$names_rec = bf.sp
 
 BfDat_trait_ab = merge(bfVP_ab, bf_trait_sub, by= 'names_rec')
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(BfDat_trait_ab, file='VPtrait_ab_bf.RDATA')
 
 
@@ -262,8 +259,7 @@ save(BfDat_trait_ab, file='VPtrait_ab_bf.RDATA')
 # #    Occurrence
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-load('VPCP_moth.RDATA') # to get variance and covariance idf interested in. (VP.test3)
+setwd("~/Data/4.VPanalyses/VPCP")load('VPCP_moth.RDATA') # to get variance and covariance idf interested in. (VP.test3)
 
 dim(VP.test3_moth$Vnorm)
 dim(VP.test3_moth$Cnorm)
@@ -283,7 +279,7 @@ for (i in 1:dim(VP.test3_moth$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keepin the Normalized variance
@@ -295,7 +291,7 @@ VP.fix.moth = varr*VP.test3[1:3, 1:3, ,]
 
 moth.sp = TabMF_Moth$species
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Traits")
+setwd("~/Data/2.Prep_data/Traits")
 moth_trait = read.csv('Traits_Moths.csv', header=T, sep=',')
 
 dim(moth_trait)
@@ -330,14 +326,13 @@ mothVP$Genus.and.species = moth.sp
 
 mothDat_trait = merge(mothVP, moth_trait_sub, by= 'Genus.and.species')
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(mothDat_trait, file='VPtrait_moth.RDATA')
 
 
 # #
 # #    Abundance
-#setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_ab_moth.RDATA')
 dim(VP.test3_moth$Vnorm)
 dim(VP.test3_moth$Cnorm)
@@ -357,7 +352,7 @@ for (i in 1:dim(VP.test3_moth$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_Moth$SR2, dim = c(1000L, 319L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_Moth$SR2, dim = c(319L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keeping the Normalized variance
@@ -378,7 +373,7 @@ mothVP_ab$Genus.and.species = moth.sp
 
 mothDat_trait_ab = merge(mothVP_ab, moth_trait_sub, by= 'Genus.and.species')
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(mothDat_trait_ab, file='VPtrait_ab_moth.RDATA')
 
 
@@ -389,8 +384,7 @@ save(mothDat_trait_ab, file='VPtrait_ab_moth.RDATA')
 # #    Occurrence
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_bd.RDATA') # to get variance and covariance idf interested in. (VP.test3)
 
 dim(VP.test3_bd$Vnorm)
@@ -411,7 +405,7 @@ for (i in 1:dim(VP.test3_bd$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_bd$TjurR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bd$TjurR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keepin the Normalized variance
@@ -423,7 +417,7 @@ VP.fix.bd = varr*VP.test3[1:3, 1:3, ,]
 
 bd.sp = TabMF_bd$species
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Traits")
+setwd("~/Data/2.Prep_data/Traits")
 bird_trait = read.csv('BirdTraits21112018.csv', header=T, sep=',')
 
 dim(bird_trait)
@@ -484,14 +478,13 @@ bdVP$sp_name = bd.sp
 BdDat_trait = merge(bdVP, bird_trait_sub2, by= 'sp_name')
 dim(BdDat_trait)
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(BdDat_trait, file='VPtrait_bird2.RDATA')
 
 
 # #
 # #    Abundance
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_ab_bd.RDATA')
 dim(VP.test3_bd$Vnorm)
 dim(VP.test3_bd$Cnorm)
@@ -511,7 +504,7 @@ for (i in 1:dim(VP.test3_bd$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_bd$SR2, dim = c(1000L, 102L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_bd$SR2, dim = c(102L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keeping the Normalized variance
@@ -538,7 +531,7 @@ BdDat_trait_ab = merge(bdVP_ab, bird_trait_sub2, by= 'sp_name')
 dim(BdDat_trait_ab)
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(BdDat_trait_ab, file='VPtrait_ab_bird.RDATA')
 
 
@@ -548,6 +541,7 @@ save(BdDat_trait_ab, file='VPtrait_ab_bird.RDATA')
 ##.......................................................................................................
 # #
 # #    Occurrence
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_wg.RDATA') # to get variance and covariance idf interested in. (VP.test3)
 
 dim(VP.test3_wg$Vnorm)
@@ -568,7 +562,7 @@ for (i in 1:dim(VP.test3_wg$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_wg$TjurR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keepin the Normalized variance
@@ -581,7 +575,7 @@ VP.fix.wg = varr*VP.test3[1:3, 1:3, ,]
 wg.sp = TabMF_wg$species
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Traits")
+setwd("~/Data/2.Prep_data/Traits")
 load('Traits_rodmamal.RDATA')
 
 dim(Mammals_trait)
@@ -608,7 +602,7 @@ dim(wgVP)
 wgVP$iucn2020_binomial = wg.sp
 
 wgDat_trait = merge(wgVP, wintG_trait_sub, by= 'iucn2020_binomial')
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 
 save(wgDat_trait, file='VPtrait_wg.RDATA')
 
@@ -617,8 +611,7 @@ save(wgDat_trait, file='VPtrait_wg.RDATA')
 # #    Abundance
 
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
-
+setwd("~/Data/4.VPanalyses/VPCP")
 load('VPCP_ab_wg.RDATA')
 dim(VP.test3_wg$Vnorm)
 dim(VP.test3_wg$Cnorm)
@@ -638,7 +631,7 @@ for (i in 1:dim(VP.test3_wg$Vnorm)[4]){  ## mcmc samples
 }
 
 # prepare scaling based on tjurR2
-varr <- aperm(array(TabMF_wg$SR2, dim = c(1000L, 15L, 3L, 3L)), perm = c(4L, 3L, 2L, 1L))
+varr <- aperm(array(TabMF_wg$SR2, dim = c(15L, 3L, 3L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr)
 
 # only keeping the Normalized variance
@@ -659,5 +652,5 @@ wgVP_ab$iucn2020_binomial = wg.sp
 
 wgDat_trait_ab = merge(wgVP_ab, wintG_trait_sub, by= 'iucn2020_binomial')
 
-setwd("D:/Helsinki/RECcII/CSC_HMSC/VPres")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(wgDat_trait_ab, file='VPtrait_ab_wg.RDATA')

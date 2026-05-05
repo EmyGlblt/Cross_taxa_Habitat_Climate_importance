@@ -6,8 +6,7 @@
 ## Function prepared
 setwd("~/Code/3.Postprocessing/Script_VP_extract")
 source('computeVarPartSummaries_111125.R')
-
-setwd("~/Code/x.Extra_functions")
+setwd("~/Code/x.New_functions")
 source('cHmsc.R')
 
 ## libraries
@@ -58,22 +57,18 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 #cond
-#MB  NB  SB 
-#382 101 561 
+#cond
+#1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 
+#12   12   12   12   12   12   12   48   51   48   49   51   52   54   52   51   52   53   52   53   53 
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_rod = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                             groupnames = groupnames1, all=FALSE, marginal=FALSE, 
+                                             groupnames = groupnames1, marginal=TRUE, 
                                              conditional = TRUE,
                                              cond = cond, wb = NULL) # cannot be both specified at the same time!
 
@@ -83,15 +78,15 @@ dim(VP.test1_rod$Vnorm)  # 3    4   sp 8  nsamp 1000 cond 3
 ### grouped VP - WITHIN - BTW
 
 VP.test2_rod = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                             groupnames = groupnames1, all=FALSE, marginal=FALSE, 
+                                             groupnames = groupnames1, marginal=TRUE, 
                                              conditional = TRUE,
                                              cond = cond, wb = TRUE)
 
 dim(VP.test2_rod$Vnorm)  # 3    4   sp 10  wt nsamp 1000
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
-save(VP.test1_rod, VP.test2_rod, TabMF_rod, file = 'VPcondwb_Rod.RDATA')
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
+save(VP.test1_rod, VP.test2_rod, TabMF_rod, file = 'VPcondwb_temp_Rod.RDATA')
 
 
 
@@ -131,19 +126,15 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_bf = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                 groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                 groupnames = groupnames1, marginal=TRUE,  
+                                      conditional = TRUE,
                                                  cond = cond, wb = NULL)
 
 
@@ -151,13 +142,14 @@ VP.test1_bf = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
 ### grouped VP - WITHIN - BTW
 
 VP.test2_bf = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                 groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                 groupnames = groupnames1, marginal=TRUE,  
+                                      conditional = TRUE,
                                                  cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_bf, VP.test2_bf, TabMF_bf, file = 'VPcondwb_bf.RDATA')
+save(VP.test1_bf, VP.test2_bf, TabMF_bf, file = 'VPcondwb_temp_bf.RDATA')
 
 
 ##.......................................................................................................
@@ -196,19 +188,14 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_moth = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                                 cond = cond, wb = NULL)
 
 
@@ -216,13 +203,13 @@ VP.test1_moth = computeVarPartSummaries(hM = models, exclude = 2, group = group1
 ### grouped VP - WITHIN - BTW
 
 VP.test2_moth = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                                 cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_moth, VP.test2_moth, TabMF_Moth, file = 'VPcondwb_moth.RDATA')
+save(VP.test1_moth, VP.test2_moth, TabMF_Moth, file = 'VPcondwb_temp_moth.RDATA')
 
 
 
@@ -262,32 +249,26 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
-
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_bd = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                                 cond = cond, wb = NULL)
 
 
 ## ............................................................................................
 ### grouped VP - WITHIN - BTW
 VP.test2_bd = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                                 cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_bd, VP.test2_bd, TabMF_bd, file = 'VPcondwb_bd.RDATA')
+save(VP.test1_bd, VP.test2_bd, TabMF_bd, file = 'VPcondwb_temp_bd.RDATA')
 
 
 
@@ -327,31 +308,25 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
-
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_wg = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                                 cond = cond, wb = NULL)
 
 
 ## ............................................................................................
 ### grouped VP - WITHIN - BTW
 VP.test2_wg = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                                groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                                groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                                 cond = cond, wb = TRUE)
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_wg, VP.test2_wg, TabMF_wg, file = 'VPcondwb_wg.RDATA')
+save(VP.test1_wg, VP.test2_wg, TabMF_wg, file = 'VPcondwb_temp_wg.RDATA')
 
 
 ## all occurrence
@@ -359,7 +334,7 @@ save(VP.test1_moth, TabMF_Moth, VP.test1_bf, TabMF_bf,
      VP.test1_rod, TabMF_rod, VP.test1_wg, TabMF_wg,
      VP.test1_bd, TabMF_bd, VP.test2_moth, VP.test2_bf,
      VP.test2_rod, VP.test2_wg,
-     VP.test2_bd,file = 'VPCPcond_all_occ.RDATA')
+     VP.test2_bd,file = 'VPCPcond_temp_all_occ.RDATA')
 
 
 
@@ -404,22 +379,14 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
-#cond
-#MB  NB  SB 
-#382 101 561 
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_rod = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                       groupnames = groupnames1, all=FALSE, marginal=FALSE, 
+                                       groupnames = groupnames1, marginal=TRUE, 
                                        conditional = TRUE,
                                        cond = cond, wb = NULL)
 
@@ -427,13 +394,13 @@ VP.test1_rod = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
 ### grouped VP - WITHIN - BTW
 
 VP.test2_rod = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                       groupnames = groupnames1, all=FALSE, marginal=FALSE, 
+                                       groupnames = groupnames1, marginal=TRUE, 
                                        conditional = TRUE,
                                        cond = cond, wb = TRUE)
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_rod, VP.test2_rod, TabMF_rod, file = 'VPcondwb_ab_Rod.RDATA')
+save(VP.test1_rod, VP.test2_rod, TabMF_rod, file = 'VPcondwb_temp_ab_Rod.RDATA')
 
 
 ##.......................................................................................................
@@ -472,19 +439,14 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_bf = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                      groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                      groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                       cond = cond, wb = NULL)
 
 
@@ -492,13 +454,13 @@ VP.test1_bf = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
 ### grouped VP - WITHIN - BTW
 
 VP.test2_bf = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                      groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                      groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                       cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_bf, VP.test2_bf, TabMF_bf, file = 'VPcondwb_ab_bf.RDATA')
+save(VP.test1_bf, VP.test2_bf, TabMF_bf, file = 'VPcondwb_temp_ab_bf.RDATA')
 
 
 
@@ -539,19 +501,14 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_moth = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                        groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                        groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                         cond = cond, wb = NULL)
 
 
@@ -559,13 +516,13 @@ VP.test1_moth = computeVarPartSummaries(hM = models, exclude = 2, group = group1
 ### grouped VP - WITHIN - BTW
 
 VP.test2_moth = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                        groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                        groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                         cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_moth, VP.test2_moth, TabMF_Moth, file = 'VPcondwb_ab_moth.RDATA')
+save(VP.test1_moth, VP.test2_moth, TabMF_Moth, file = 'VPcondwb_temp_ab_moth.RDATA')
 
 
 
@@ -605,32 +562,27 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_bd = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                      groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                      groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                       cond = cond, wb = NULL)
 
 
 ## ............................................................................................
 ### grouped VP - WITHIN - BTW
 VP.test2_bd = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                      groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                      groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                       cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_bd, VP.test2_bd, TabMF_bd, file = 'VPcondwb_ab_bd.RDATA')
+save(VP.test1_bd, VP.test2_bd, TabMF_bd, file = 'VPcondwb_temp_ab_bd.RDATA')
 
 
 
@@ -670,35 +622,31 @@ groupnames = groupnames1
 models$studyDesign
 models$nr # without bg
 
-catII = models$studyDesign[, c(1,3)]
-
-head(catII)
-tail(catII)
-
-cond = as.character(catII$bg)
+cond = as.character(models$studyDesign$year)
 table(cond)
 
 ##.......................................................................................................
 ### grouped VP - CONDITION
 
 VP.test1_wg = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                      groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                      groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                       cond = cond, wb = NULL)
 
 
 ## ............................................................................................
 ### grouped VP - WITHIN - BTW
 VP.test2_wg = computeVarPartSummaries(hM = models, exclude = 2, group = group1,
-                                      groupnames = groupnames1, all=FALSE, marginal=FALSE,  conditional = TRUE,
+                                      groupnames = groupnames1, marginal=TRUE,  conditional = TRUE,
                                       cond = cond, wb = TRUE)
 
 
 # Save
 setwd("~/Data/4.VPanalyses/VP_cond_trait")
-save(VP.test1_wg, VP.test2_wg, TabMF_wg, file = 'VPcondwb_ab_wg.RDATA')
+save(VP.test1_wg, VP.test2_wg, TabMF_wg, file = 'VPcondwb_temp_ab_wg.RDATA')
 
 
 ## all occurrence
+#setwd("D:/Helsinki/RECcII/Results_VP_Ap_2026")
 save(VP.test1_moth, TabMF_Moth, VP.test1_bf, TabMF_bf,
      VP.test1_rod, TabMF_rod, VP.test1_wg, TabMF_wg,
      VP.test1_bd, TabMF_bd, VP.test2_moth, VP.test2_bf,

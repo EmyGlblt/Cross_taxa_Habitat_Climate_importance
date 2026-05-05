@@ -4,7 +4,10 @@
 #
 
 ## Function prepared
+setwd("~/Code/3.Postprocessing/Script_VP_extract")
 source('computeVarPartSummaries_111125.R')
+
+setwd("~/Code/x.Extra_functions")
 source('cHmsc.R')
 
 ## libraries
@@ -20,7 +23,7 @@ library(corrplot)
 ##.......................................................................................................
 ##  Rodents
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('Rodtest2_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -63,7 +66,7 @@ dim(VP.test3$Cnorm)
 VP.test3_rod = VP.test3
 
 # Save
-##setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_rod, TabMF_rod, file = 'VPCP_rod.RDATA')
 
 
@@ -71,7 +74,7 @@ save(VP.test3_rod, TabMF_rod, file = 'VPCP_rod.RDATA')
 ##.......................................................................................................
 ##  Butterflies
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('bftest_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -113,7 +116,7 @@ dim(VP.test3$Cnorm)
 VP.test3_bf = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_bf, TabMF_bf, file = 'VPCP_bf.RDATA')
 
 
@@ -121,7 +124,7 @@ save(VP.test3_bf, TabMF_bf, file = 'VPCP_bf.RDATA')
 ##.......................................................................................................
 ##  Moths
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('MothTest2_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -163,14 +166,14 @@ dim(VP.test3$Cnorm)
 VP.test3_moth = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_moth, TabMF_Moth, file = 'VPCP_moth.RDATA')
 
 
 ##.......................................................................................................
 ##  Birds
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('Birdtest_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsBirdN1 = models
@@ -214,7 +217,7 @@ summary(VP.test3_bd$Vnorm)
 
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_bd, TabMF_bd, file = 'VPCP_bd.RDATA')
 
 
@@ -222,7 +225,7 @@ save(VP.test3_bd, TabMF_bd, file = 'VPCP_bd.RDATA')
 ##.......................................................................................................
 ##  Winter game
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodel/Results")
+setwd("~/Data/3.Modelrun/occ")
 
 load('WintGtest_ch1_models_thin_1000_samples_250_chainsN1_1.Rdata')
 modelsN1 = models
@@ -264,15 +267,8 @@ dim(VP.test3$Cnorm)
 VP.test3_wg = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_wg, TabMF_wg, file = 'VPCP_wg.RDATA')
-
-
-## all occurrence
-# #setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
-# save(VP.test3_moth, TabMF_Moth, VP.test3_bf, TabMF_bf,
-#      VP.test3_rod, TabMF_rod, VP.test3_wg, TabMF_wg,
-#      VP.test3_bd, TabMF_bd, file = 'VPCP_all_occ.RDATA')
 
 
 
@@ -282,7 +278,7 @@ save(VP.test3_wg, TabMF_wg, file = 'VPCP_wg.RDATA')
 ##.......................................................................................................
 ##  Rodents
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('RodtestAB_ch1_models_thin_1000_samples_500_chains_1.Rdata')
 modelsN1 = models
@@ -325,7 +321,7 @@ dim(VP.test3$Cnorm)
 VP.test3_rod = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_rod, TabMF_rod, file = 'VPCP_ab_rod.RDATA')
 
 
@@ -333,7 +329,7 @@ save(VP.test3_rod, TabMF_rod, file = 'VPCP_ab_rod.RDATA')
 ##.......................................................................................................
 ##  Butterflies
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('bfAB_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsN1 = models
@@ -375,7 +371,7 @@ dim(VP.test3$Cnorm)
 VP.test3_bf = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_bf, TabMF_bf, file = 'VPCP_ab_bf.RDATA')
 
 
@@ -383,7 +379,7 @@ save(VP.test3_bf, TabMF_bf, file = 'VPCP_ab_bf.RDATA')
 ##.......................................................................................................
 ##  Moths
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 
 load('MothAB_ch1_models_thin_1000_samples_250_chains_1.Rdata')
@@ -426,14 +422,14 @@ dim(VP.test3$Cnorm)
 VP.test3_moth = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_moth, TabMF_Moth, file = 'VPCP_ab_moth.RDATA')
 
 
 ##.......................................................................................................
 ##  Birds
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('BirdAB2_ch1_models_thin_1000_samples_250_chains_1.Rdata')
 modelsBirdN1 = models
@@ -475,7 +471,7 @@ dim(VP.test3$Cnorm)
 VP.test3_bd = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_bd, TabMF_bd, file = 'VPCP_ab_bd.RDATA')
 
 
@@ -483,7 +479,7 @@ save(VP.test3_bd, TabMF_bd, file = 'VPCP_ab_bd.RDATA')
 ##.......................................................................................................
 ##  Winter game
 ##.......................................................................................................
-setwd("D:/Helsinki/RECcII/CSC_HMSC/fullmodelABpure/Results_ABpure")
+setwd("~/Data/3.Modelrun/ab")
 
 load('WintGAB2_ch1_models_thin_1000_samples_250_chainsN1_1.Rdata')
 modelsN1 = models
@@ -525,14 +521,7 @@ dim(VP.test3$Cnorm)
 VP.test3_wg = VP.test3
 
 # Save
-#setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
+setwd("~/Data/4.VPanalyses/VP_cond_trait")
 save(VP.test3_wg, TabMF_wg, file = 'VPCP_ab_wg.RDATA')
-
-
-# ## all occurrence
-# #setwd("D:/Helsinki/RECcII/Results_VP_Sept_2025")
-# save(VP.test3_moth, TabMF_Moth, VP.test3_bf, TabMF_bf,
-#      VP.test3_rod, TabMF_rod, VP.test3_wg, TabMF_wg,
-#      VP.test3_bd, TabMF_bd, file = 'VPCP_all_ab.RDATA')
 
 
