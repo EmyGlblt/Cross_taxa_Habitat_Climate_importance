@@ -9,7 +9,7 @@ library(Hmsc)
 library(reshape2) # necessary for margina cal-> dcast function used
 library(corrplot)
 
-setwd("/home/local/guilbaul/tsclient/guilbaul/OneDrive - University of Helsinki/RECcII/ScriptData/Data/4.VPanalyses/VPCP")
+setwd("~/Data/4.VPanalyses/VPCP") # to adapt depending on where it is saved
 
 #
 #   Occurrence
@@ -34,7 +34,7 @@ for (i in 1:dim(VP.test3_rod$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.rod <- aperm(array(TabMF_rod$TjurR2, dim = c(1000L, 8L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.rod <- aperm(array(TabMF_rod$TjurR2, dim = c(8L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.rod)
 
 Mean.fix.sprod = apply(varr.rod*VP.test3.rod[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
@@ -60,7 +60,7 @@ for (i in 1:dim(VP.test3_bf$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.bf <- aperm(array(TabMF_bf$TjurR2, dim = c(1000L, 57L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.bf <- aperm(array(TabMF_bf$TjurR2, dim = c(57L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.bf)
 
 Mean.fix.spbf = apply(varr.bf*VP.test3.bf[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
@@ -86,7 +86,7 @@ for (i in 1:dim(VP.test3_wg$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.wg <- aperm(array(TabMF_wg$TjurR2, dim = c(1000L, 15L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.wg <- aperm(array(TabMF_wg$TjurR2, dim = c(15L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.wg)
 
 Mean.fix.spwg = apply(varr.wg*VP.test3.wg[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
@@ -111,7 +111,7 @@ for (i in 1:dim(VP.test3_bd$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.bd <- aperm(array(TabMF_bd$TjurR2, dim = c(1000L, 102L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.bd <- aperm(array(TabMF_bd$TjurR2,dim = c(102L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 
 Mean.fix.spbd = apply(varr.bd*VP.test3.bd[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
 
@@ -136,7 +136,7 @@ for (i in 1:dim(VP.test3_moth$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.moth <- aperm(array(TabMF_Moth$TjurR2, dim = c(1000L, 319L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.moth <- aperm(array(TabMF_Moth$TjurR2, dim = c(319L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.moth)
 
 
@@ -370,15 +370,6 @@ ggplot(data = VPmeasures.mcmc, aes(x=value, y = taxa, group = taxa, fill = VP)) 
 
 
 
-ggplot(data = VPmeasures.mcmc, aes(x=value, y = taxa, group = taxa, fill = VP)) +
-  geom_density_ridges(alpha=0.8, quantile_lines = TRUE, quantile=2) +
-  scale_fill_manual(values = c("#66C2A5", 'orange3', "yellow3", "grey78", "blue4", 'green4')) +
-  facet_grid(VP~ Measure) + xlim(c(-5, 75)) + #coord_flip() +
-  labs(title = "", x = "Variance partition",  
-       y = "Taxa") + theme_classic() 
-
-
-
 
 #
 #   Abundance
@@ -403,7 +394,7 @@ for (i in 1:dim(VP.test3_rod$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.rod <- aperm(array(TabMF_rod$SR2, dim = c(2000L, 8L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.rod <- aperm(array(TabMF_rod$SR2,dim = c(8L, 6L, 6L, 2000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.rod)
 
 Mean.fix.sprod = apply(varr.rod*VP.test3.rod[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
@@ -429,7 +420,7 @@ for (i in 1:dim(VP.test3_bf$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.bf <- aperm(array(TabMF_bf$SR2, dim = c(1000L, 57L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.bf <- aperm(array(TabMF_bf$SR2, dim = c(57L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.bf)
 
 Mean.fix.spbf = apply(varr.bf*VP.test3.bf[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
@@ -455,7 +446,7 @@ for (i in 1:dim(VP.test3_wg$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.wg <- aperm(array(TabMF_wg$SR2, dim = c(1000L, 15L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.wg <- aperm(array(TabMF_wg$SR2, dim = c(15L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.wg)
 
 Mean.fix.spwg = apply(varr.wg*VP.test3.wg[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
@@ -480,7 +471,7 @@ for (i in 1:dim(VP.test3_bd$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.bd <- aperm(array(TabMF_bd$SR2, dim = c(1000L, 102L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.bd <- aperm(array(TabMF_bd$SR2, dim = c(102L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 
 Mean.fix.spbd = apply(varr.bd*VP.test3.bd[1:6, 1:6, ,], c(1, 2, 4), mean, na.rm=T)
 
@@ -505,7 +496,7 @@ for (i in 1:dim(VP.test3_moth$Vnorm)[4]){  ## mcmc samples
 }
 
 
-varr.moth <- aperm(array(TabMF_Moth$SR2, dim = c(1000L, 319L, 6L, 6L)), perm = c(4L, 3L, 2L, 1L))
+varr.moth <- aperm(array(TabMF_Moth$SR2,dim = c(319L, 6L, 6L, 1000L)), perm = c(3L, 2L, 1L, 4L))
 dim(varr.moth)
 
 
@@ -736,23 +727,3 @@ ggplot(data = VPmeasures.mcmc, aes(x=value, y = taxa, group = taxa, fill = VP)) 
         legend.text=element_text(size=20), #change font size of legend text
         legend.title=element_text(size=20)) #change font size of legend title  
 
-
-Tab-clc2ata = VPmeasures.mcmc, aes(x=value, y = taxa, group = taxa, fill = VP)) +
-  geom_density_ridges(alpha=0.8, quantile_lines = TRUE, quantile=2) +
-  scale_fill_manual(values = c("#66C2A5", 'orange3', "yellow3", "grey78", "blue4", 'green4')) +
-  facet_grid(VP~ Measure) + xlim(c(-5, 100)) + #coord_flip() +
-  labs(title = "", x = "Variance partition",  
-       y = "Taxa") + theme_classic() 
- font size of axis titles
-        plot.title=element_text(size=20), #change font size of plot title
-        legend.text=element_text(size=20), #change font size of legend text
-        legend.title=element_text(size=20)) #change font size of legend title  
-
-
-
-ggplot(data = VPmeasures.mcmc, aes(x=value, y = taxa, group = taxa, fill = VP)) +
-  geom_density_ridges(alpha=0.8, quantile_lines = TRUE, quantile=2) +
-  scale_fill_manual(values = c("#66C2A5", 'orange3', "yellow3", "grey78", "blue4", 'green4')) +
-  facet_grid(VP~ Measure) + xlim(c(-5, 100)) + #coord_flip() +
-  labs(title = "", x = "Variance partition",  
-       y = "Taxa") + theme_classic() 
