@@ -91,7 +91,7 @@ X. Extra functions
    
    - VP_joint_interp
 > [!IMPORTANT]
-> _*New* code to interpret the joint variation between environmental drivers provided for both occurrence and abundance data on separate scripts._
+> _*New* code to interpret the joint variation between environmental drivers provided for both occurrence and abundance data._
    
    - VP_plotting
 > [!IMPORTANT]
