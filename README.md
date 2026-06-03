@@ -104,7 +104,12 @@ X. Extra functions -------------------------------------------------------------
 > _Contains scripts for data summarizing (TableCLCdata.R, TableCLCprop.R), data processing (cHmsc.R from the HMSC package), data analysing (Corr_function.R) and data plotting (Finbr_niceplot.R and function_ggplot_strip_color.R from https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip)._
 
 <br>
-Analyses were performed in R software (>4.4). Specifically, we used Hmsc software (3.3).
+Hmsc models were run on HPC (csc):
+Module name (R version)	CRAN package dating	Bioconductor version	RStudio Server version	oneMKL version	Cmdstan version
+        r-env/440	          May 15 2024	            3.19	            2024.04.0-735	       2024.1.0	     2.35.0
+        r-env/432     	    Jan 15 2024               3.18	            2023.12.0-369	       2024.0.0        2.34.1
+
+Post analyses were performed in R software (>4.4). Specifically, we used Hmsc software (3.3).
 
 <br>
 <br>
