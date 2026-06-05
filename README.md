@@ -125,11 +125,16 @@ Hmsc models were run on HPC (csc):
 |        r-env/432        |     Jan 15 2024     |         3.18         |      2023.12.0-369     |    2024.0.0    |      2.34.1     |
 
 <br>
+
 Post analyses were performed in R software (>4.4). 
+
+
 In addition, we used the following R packages: abind v. 1.4.8 (Plate and Heiberger 2024), class v. 7.3.23 (Venables and Ripley 2002), colorblindr v. 0.1.0 (McWhite and Wilke 2026), corrplot v. 0.95 (Wei and Simko 2024), cowplot v. 1.2.0 (Wilke 2025a), eulerr v. 7.0.4 (Larsson and Gustafsson 2018), formattable v. 0.2.1 (Ren and Russell 2021), geomtextpath v. 0.2.0 (Cameron and van den Brand 2025), ggeasy v. 0.1.6 (Carroll, Schep, and Sidi 2025), ggExtra v. 0.11.0 (Attali and Baker 2025), ggpubr v. 0.6.3 (Kassambara 2026), ggridges v. 0.5.7 (Wilke 2025b), ggtern v. 4.0.0 (Hamilton and Ferry 2018), grDevices v. 4.5.3 (R Core Team 2026a), grid v. 4.5.3 (R Core Team 2026b), gridExtra v. 2.3 (Auguie 2017), gtable v. 0.3.6 (Wickham and Pedersen 2024), Hmsc v. 3.3.7 (Tikhonov et al. 2025), kableExtra v. 1.4.0 (Zhu 2024), knitr v. 1.51 (Xie 2014, 2015, 2025), mapdata v. 2.3.1 (Richard A. Becker and Ray Brownrigg. 2022), maps v. 3.4.3 (Becker et al. 2025), mapsFinland v. 0.2.2 (Haukka, 2020), maptools v. 1.1-8 (Bivand, 2003) - before archived, patchwork v. 1.3.2 (Pedersen 2025), pdftools v. 3.9.0 (Ooms 2026), png v. 0.1.9 (Urbanek 2026), quantmod v. 0.4.28 (Ryan and Ulrich 2025), RColorBrewer v. 1.1.3 (Neuwirth 2022), remotes v. 2.5.0 (Csárdi et al. 2024), rempsyc v. 0.2.0 (Thériault 2023), reshape2 v. 1.4.5 (Wickham 2007), scales v. 1.4.0 (Wickham, Pedersen, and Seidel 2025), sf v. 1.1.0 (E. Pebesma 2018; E. Pebesma and Bivand 2023), sjPlot v. 2.9.0 (Lüdecke 2025), sp v. 2.2.1 (E. J. Pebesma and Bivand 2005; Bivand, Pebesma, and Gomez-Rubio 2013), tidyverse v. 2.0.0 (Wickham et al. 2019), wesanderson v. 0.3.7 (Ram and Wickham 2023).
 
 <br>
+
 _Package citations_
+
 
 > Attali, Dean, and Christopher Baker. 2025. ggExtra: Add Marginal Histograms to “ggplot2,” and More “ggplot2” Enhancements. https://doi.org/10.32614/CRAN.package.ggExtra.
 > Auguie, Baptiste. 2017. gridExtra: Miscellaneous Functions for “Grid” Graphics. https://doi.org/10.32614/CRAN.package.gridExtra.
