@@ -137,8 +137,13 @@ _Package citations_
 
 
 > Attali, Dean, and Christopher Baker. 2025. ggExtra: Add Marginal Histograms to “ggplot2,” and More “ggplot2” Enhancements. https://doi.org/10.32614/CRAN.package.ggExtra.
+>
+> 
 > Auguie, Baptiste. 2017. gridExtra: Miscellaneous Functions for “Grid” Graphics. https://doi.org/10.32614/CRAN.package.gridExtra.
+> 
 > Becker, Richard A., Allan R. Wilks, Ray Brownrigg, Thomas P. Minka, and Alex Deckmyn. 2025. maps: Draw Geographical Maps. https://doi.org/10.32614/CRAN.package.maps.
+>
+> 
 > Bivand, Roger S., Edzer Pebesma, and Virgilio Gomez-Rubio. 2013. Applied Spatial Data Analysis with R, Second Edition. Springer, NY. https://asdar-book.org/.
 > Bivand R. (2003). maptools: Tools for Handling Spatial Objects. R package version 1.1-8, https://cran.r-project.org/web/packages/maptools.
 > Cameron, Allan, and Teun van den Brand. 2025. geomtextpath: Curved Text in “ggplot2”. https://doi.org/10.32614/CRAN.package.geomtextpath.
