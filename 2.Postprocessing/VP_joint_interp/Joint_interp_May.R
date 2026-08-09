@@ -284,7 +284,7 @@ indepdt = indepdt %>%
   group_by(Taxa, var, element) %>%
   summarise(count = length(value))%>% 
   print(n = 100)
-indepdt$tot = c(rep(102, 5), rep(57, 3), rep(319, 5), rep(15, 1), rep(15, 2))  # check for species if a driver1-driver2 independence exist and adapt the numbers of rep (ex none for small mammals)
+indepdt$tot = c(rep(102, 5), rep(57, 3), rep(319, 5), rep(8, 1), rep(15, 2))  # check for species if a driver1-driver2 independence exist and adapt the numbers of rep (ex none for small mammals)
 indepdt$pct = 100*indepdt$count/indepdt$tot
 indepdt %>% 
   print(n = 100)
@@ -364,6 +364,9 @@ gt_table <- Effects %>%
 gt_table |> gtsave("Occ_shared.png", expand = 10)
 
 
+
+# Save for later
+DiffMV_occ = DiffMV
 
 #.......................................................
 #.......................................................
@@ -956,6 +959,9 @@ gt_table2 |> gtsave("AB_shared.png", expand = 10)
 
 
 
+# Save for later
+DiffMV_ab = DiffMV
+
 #.......................................................
 #.......................................................
 
@@ -1165,3 +1171,78 @@ for (i in seq_along(strips)) {
 }
 
 plot(g)
+
+
+
+
+### Summarize indpdt - confounded effects
+### 
+## occ
+
+confoun_occ = na.omit(DiffMV_occ[DiffMV_occ$value < -0.99,])
+confoun_occ = confoun_occ %>%
+  group_by(var, element) %>%
+  summarise(pct = 100*length(value)/(102+57+319+8+15))
+confoun_occ$shared = 'confounded'
+confoun_occ$data = 'occ'
+
+
+indepdt_occ = na.omit(DiffMV_occ[DiffMV_occ$value > -0.01 & DiffMV_occ$value < 0.01,])
+indepdt_occ = indepdt_occ %>%
+  group_by(var, element) %>%
+  summarise(pct = 100*length(value)/(102+57+319+8+15))
+indepdt_occ$shared = 'Independent'
+indepdt_occ$data = 'occ'
+
+## ab
+confoun_ab = na.omit(DiffMV_ab[DiffMV_ab$value < -0.99,])
+confoun_ab = confoun_ab %>%
+  group_by(var, element) %>%
+  summarise(pct = 100*length(value)/(102+57+319+8+15))
+confoun_ab$shared = 'confounded'
+confoun_ab$data = 'ab'
+
+indepdt_ab = na.omit(DiffMV_ab[DiffMV_ab$value > -0.01 & DiffMV_ab$value < 0.01,])
+indepdt_ab = indepdt_ab %>%
+  group_by(var, element) %>%
+  summarise(pct = 100*length(value)/(102+57+319+8+15))
+
+indepdt_ab$shared = 'Independent'
+indepdt_ab$data = 'ab'
+
+
+# altogether
+Effects = rbind(indepdt_occ, confoun_occ, indepdt_ab, confoun_ab)
+Effects$shared = factor(Effects$shared,
+                        levels = c('Independent', 'confounded'))
+Effects$data = factor(Effects$data,
+                        levels = c('occ', 'ab'))
+
+
+gt_table3 <- Effects %>%
+  gt(groupname_col = "shared", rowname_col = 'data', row_group_as_column = FALSE)%>%
+  tab_spanner_delim(delim = "_")  %>%
+  fmt_number(
+    columns = c(pct),
+    decimals = 2
+  ) %>%
+  cols_label(
+    var = "Variable 1",
+    element = "Variable 2",
+    pct = "Pct (%)"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_column_labels(everything())
+  ) %>% tab_options(
+    data_row.padding = px(2),
+    summary_row.padding = px(3), # A bit more padding for summaries
+    row_group.padding = px(6)    # And even more for our groups
+  ) |> 
+  opt_stylize(style = 3, color = 'gray')
+
+# Print the table
+gt_table3 |> gtsave("summary_shared.png", expand = 10)
+
