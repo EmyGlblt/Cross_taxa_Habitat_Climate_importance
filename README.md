@@ -11,6 +11,9 @@ _Authors_: The Hmsc code was developed through collaboration between Emy Guilbau
 ## Data files
 
 The code and data used in the current analyses are available in GitHub [code available here] and Zenodo [https://doi.org/10.5281/zenodo.17952060]. Only processed data for the analyses (without coordinates) are available. 
+The species and environmental data generated in this study have been deposited in the Zenodo database [https://doi.org/10.5281/zenodo.17952060]. 
+Original monitoring data for moths and birds are available through the Finnish Biodiversity Information Facility, FinBIF (https://laji.fi/). For butterflies, original monitoring data can be accessed through the European butterfly transect dataset through eBMS after formally completing a license form (https://butterfly-monitoring.net/ebms-dataaccess). For small and large mammals, original monitoring data are available via the Natural Resources Institute Finland (Luke) by sending data request to kirjaamo@luke.fi. The original climatic variables are available from the Finnish Meteorological Institute (https://etsin.fairdata.fi/datasets/fmi?keys=Finnish%20Meteorological%20Insitute&terms=organization_name_en.keyword&p=1&sort=best). Habitat variables were derived from Corine Land Cover (CLC) database (https://land.copernicus.eu/en/products/corine-land-cover).
+
 Data have been collected in systematic and organized monitoring programs lead by the Natural Resources Institute Finland and Finnish Environment Institute. Species specific monitoring programs have followed their own sampling strategy, which are described in the Materials and Methods section. Given the substantial number of sampled sites and to have manageable computational running times, we used stratified sampling to subsample representative sites in time and space for birds and mammals. Finally, we retained species with at least 40 observations in this period in our models; thus, rare species were omitted to prevent model overfitting.
 <br>
 Location:  Finland, Northern Europe.
@@ -120,6 +123,7 @@ Schulz, T., Saastamoinen, M. and Vanhatalo, J. (2025). “ Model-Based Variance 
 
 <br>
 Hmsc models were run on HPC (csc):
+Running time of Hmsc models varied between taxa and data types: 10 to 12 days approximately.
 <br>
 
 | Module name (R version) | CRAN package dating | Bioconductor version | RStudio Server version | oneMKL version | Cmdstan version |
