@@ -119,7 +119,7 @@ Schulz, T., Saastamoinen, M. and Vanhatalo, J. (2025). “ Model-Based Variance 
 ## R analyses
 
 <br>
-Installing the required R packages take some minutes in a regular laptop. Hmsc models were run on HPC (csc) which varied between taxa and data types: 10 to 12 days approximately. Running the post analysis for one species group takes some hours on a regular laptop.
+Installing the required R packages take some minutes in a regular laptop. Hmsc models were run on HPC (CSC – IT Center for Science, Finland) which varied between taxa and data types: 10 to 12 days approximately. Running the post analysis for one species group takes some hours on a regular laptop.
 
 <br>
 
