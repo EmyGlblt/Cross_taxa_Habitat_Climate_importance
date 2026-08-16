@@ -119,8 +119,8 @@ Schulz, T., Saastamoinen, M. and Vanhatalo, J. (2025). “ Model-Based Variance 
 ## R analyses
 
 <br>
-Hmsc models were run on HPC (csc):
-Running time of Hmsc models varied between taxa and data types: 10 to 12 days approximately.
+Installing the required R packages take some minutes in a regular laptop. Hmsc models were run on HPC (csc) which varied between taxa and data types: 10 to 12 days approximately. Running the post analysis for one species group takes some hours on a regular laptop.
+
 <br>
 
 | Module name (R version) | CRAN package dating | Bioconductor version | RStudio Server version | oneMKL version | Cmdstan version |
