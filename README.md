@@ -35,6 +35,8 @@ The *climatic* variables are available from the Finnish Meteorological Institute
 Habitat and landscape variables were derived from Corine Land Cover (CLC) database (https://land.copernicus.eu/en/products/corine-land-cover). 
 The method section described the preparation of environmental covariates used in the models.
 
+Background information: The Finland map outline was extracted from the maps package (Becker et al., 2025). 
+The boundary for the regional division (northern boreal, middle boreal, and south boreal) was derived from the Finnish Environment Institute (SYKE), Helsinki, Finland, Forest Vegetation Zones dataset available at https://ckan.ymparisto.fi/dataset/%7B664BE696-C6A5-4FC4-8D6A-7D2E63D0E9C6%7D.
 
 ## R analyses
 <br>
